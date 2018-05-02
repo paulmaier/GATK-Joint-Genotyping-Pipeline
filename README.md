@@ -1,6 +1,6 @@
 ## GATK-Joint-Genotyping-Pipeline
 
-### A more efficient way to run GATK 4's HaplotypeCaller and GenotypeGVCFs pipeline for RNAseq SNP data
+### A more efficient way to run GATK 4's HaplotypeCaller | GenotypeGVCFs pipeline for RNAseq SNP data
 
 This was configured for my personal use. You will need to change the path names, sample names, etc.
 Due to the slow nature of GATK's CombineGVCFs | GenotypeGVCFs pipeline,
@@ -11,7 +11,7 @@ It uses the GenomicsDBImport | GenotypeGVCFs, which as of today (May 2, 2018),
 only works on one interval (chromosome/contig) at a time.
 This script will make an artificial interval for GenomicsDBImport | GenotypeGVCFs,
 and then restore the original CHROM/POS identities afterwards.  
-**NOTE:** Since I only had 3 samples, I did not parallelize by sample. But this could be done.
+**NOTE:** Since I only had 3 samples ("229", "230", "231"), I did not parallelize by sample. If you have many samples you may want to do that. As written however, you'll want to run Step 1, then all samples in Step 2 simultaneously, Step 3, Step 4 (if desired).
 
 ### This pipeline is designed to:
 1. Call SNPs in a pooled transcriptome
@@ -30,7 +30,7 @@ Prepare Sample 229 for HaplotypeCaller:
 `sbatch variantcalling229.sh`
 
 Call HaplotypeCaller on Sample 229:  
-``sbatch variantcalling229_part2.sh``
+`sbatch variantcalling229_part2.sh`
 
 Prepare Sample 230 for HaplotypeCaller:  
 `sbatch variantcalling230.sh`
@@ -42,7 +42,7 @@ Prepare Sample 231 for HaplotypeCaller:
 `sbatch variantcalling231.sh`
 
 Call HaplotypeCaller on Sample 231:  
-``sbatch variantcalling231_part2.sh``
+`sbatch variantcalling231_part2.sh`
 
 Create fasta of concatenated REF snps from pooled output (use VCF file)  
 Call this `concat.fa`  
