@@ -1,4 +1,5 @@
 GATK-Joint-Genotyping-Pipeline
+
 A more efficient way to run GATK 4's HaplotypeCaller and GenotypeGVCFs pipeline for RNAseq SNP data
 
 This was configured for my personal use. You will need to change the path names, sample names, etc.
@@ -18,7 +19,7 @@ This pipeline is designed to:
 4. Merge genotypes, SNP annotations, and gene annotations from a trinotate report
 
 Prepare pooled (3) samples for HaplotypeCaller:
-sbatch variantcallingALL.sh
+`sbatch variantcallingALL.sh`
 
 Call HaplotypeCaller on pooled (3) samples...
 Also make sure the output includes only biallelic SNPs:
