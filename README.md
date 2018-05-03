@@ -1,6 +1,6 @@
 ## GATK-Joint-Genotyping-Pipeline
 
-### A more efficient way to run GATK 4's HaplotypeCaller | GenotypeGVCFs pipeline for RNAseq SNP data
+### More efficient way to run GATK4's HaplotypeCaller | GenotypeGVCFs pipeline for RNAseq SNP data
 
 This was configured for my personal use. You will need to change the path names, sample names, etc.
 Due to the slow nature of GATK's CombineGVCFs | GenotypeGVCFs pipeline,
